@@ -12,5 +12,6 @@ int main() {
     scanf("%s", filename);
     char *result = generate_string(regex, "");
     writeToFile(filename, result);
+    print_string(result);
     return 0;
 }

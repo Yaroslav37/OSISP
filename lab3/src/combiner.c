@@ -16,7 +16,7 @@ char* generate_string(char* pattern, char* prefix) {
             strncat(new_prefix, ch, 1);
             char* generated_string = generate_string(end + 1, new_prefix);
             strcat(result, generated_string);
-            strcat(result, "\n"); // Add newline character
+            strcat(result, "\n");
             free(generated_string);
         }
         return result;
@@ -26,9 +26,9 @@ char* generate_string(char* pattern, char* prefix) {
         strncat(new_prefix, pattern, 1);
         char* result1 = generate_string(pattern + 2, new_prefix);
         char* result2 = generate_string(pattern + 2, prefix);
-        char* result = malloc(strlen(result1) + strlen(result2) + 2); // Increase size for newline character
+        char* result = malloc(strlen(result1) + strlen(result2) + 2);
         strcpy(result, result1);
-        strcat(result, "\n"); // Add newline character
+        strcat(result, "\n");
         strcat(result, result2);
         free(result1);
         free(result2);
